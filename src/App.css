@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+.bg-blue {
+  background-color: #1E73BE !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav .nav-link {
+  color: #ffffffcc !important;
+  background-color: transparent;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect */
+nav .nav-link:hover {
+  background-color: #ffffff26;
+  color: #fff !important;
+  transform: scale(1.01);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Active route style */
+nav .nav-link.active {
+  background-color: #292D76 !important;
+  color: #fff !important;
+  font-weight: 500;
+}
+
+/* Mobile Offcanvas */
+@media (max-width: 768px) {
+  .offcanvas {
+    width: 280px !important;
+    background-color: #1E73BE !important;
   }
-  to {
-    transform: rotate(360deg);
+
+  .offcanvas .offcanvas-header .offcanvas-title {
+    color: #fff;
+  }
+
+  .offcanvas .offcanvas-header .btn-close {
+    filter: invert(1);
+    opacity: 1;
+  }
+
+  .offcanvas .offcanvas-body .nav {
+    gap: 10px;
+  }
+
+  .offcanvas .offcanvas-body .nav-link {
+    color: #ffffffcc !important;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 10px 15px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Hover effect */
+  .offcanvas .offcanvas-body .nav-link:hover {
+    background-color: #ffffff26;
+    color: #fff !important;
+    transform: scale(1.01);
+  }
+
+  /* Active route style */
+  .offcanvas .offcanvas-body .nav-link.active {
+    background-color: #292D76 !important;
+    color: #fff !important;
+    font-weight: 500;
   }
 }

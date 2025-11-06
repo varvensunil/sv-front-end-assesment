@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+## RMS Resource Request & Approval Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Scenario:
 
-## Available Scripts
+    You are developing a Resource Request & Approval Portal for a Resource Management System (RMS).
+    Department heads should be able to raise resource requests and view their approval status.
 
-In the project directory, you can run:
+### Getting Started
 
-### `npm start`
+1.  Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    # Clone the repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+        git clone https://github.com/your-username/resource-request-portal.git
 
-### `npm test`
+    # Navigate into the project directory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        cd resource-request-portal
 
-### `npm run build`
+    # Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  Run React App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        npm start
 
-### `npm run eject`
+## Component Overview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. App.js
+2. RequestContext.js
+3. AddRequestForm.js
+4. RequestsTable.js
+5. ApprovalDashboard.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. App.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Wraps all components inside the `RequestContext` provider.
+2. Displays the overall UI layout:
+    - AddRequestForm
+    - RequestsTable
+    - ApprovalDashboard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. RequestContext.js
 
-## Learn More
+    path : /context/RequestContext.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Provides global state management using React Context API.
+2. Centralizes all requests and their some operations like :
+    - Fetching requests from API.
+    - Adding new requests via form
+    - modifing the existing request via PUT
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. AddRequestForm.js
 
-### Code Splitting
+    path : /components/AddRequestForm.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Displays a form to create a new resource request.
+2. Inputs include: Project Name, Required Role, Experience Level, Justification, Priority (Low / Medium / High)
+3. Submits data to API (Mock API) through RequestContext.
+4. After successful submission, the form resets and a toast message appears.
 
-### Analyzing the Bundle Size
+### 4. RequestsTable.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    path : /components/RequestsTable.js
 
-### Making a Progressive Web App
+1. Displays all submitted requests in table records.
+2. One button for exporting the table records in `.xlsx` file format
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 5. ApprovalDashboard.jsx
 
-### Advanced Configuration
+    path : /components/ApprovalDashboard.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Displays all submitted requests in card views.
+2. Supports:
+    - Filtering by status (e.g., All, Pending, Approved, Rejected)
+    - Filtering by priority
+    - Sorting alphabetically (A–Z / Z–A)
+3. Two buttons for approve and requests for updating status to API (Mock API) through RequestContext.
 
-### Deployment
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend: React (Hooks, Context API)
+- UI: Bootstrap, FontAwesome Icons
+- Backend: MockAPI
