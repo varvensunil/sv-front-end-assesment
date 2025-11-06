@@ -11,7 +11,7 @@
 
     # Clone the repository
 
-        git clone https://github.com/your-username/resource-request-portal.git
+        git clone https://github.com/varvensunil/sv-front-end-assesment.git
 
     # Navigate into the project directory
 
@@ -83,3 +83,7 @@
 - Frontend: React (Hooks, Context API)
 - UI: Bootstrap, FontAwesome Icons
 - Backend: MockAPI
+
+
+## Author
+##### Developer : Venkatasunil Varada
